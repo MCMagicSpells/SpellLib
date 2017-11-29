@@ -1,17 +1,22 @@
 package me.thecomputergeek2.magicspells.importer
 
 import spock.lang.Specification
+import org.gradle.api.Plugin
+import org.gradle.testfixtures.ProjectBuilder
 
 // Nullify the test for now
 class ImporterPluginTest extends Specification {
-    def "someLibraryMethod returns true"() {
+    def "construction test"() {
         setup:
-        def lib = { true }
+        println 'setup'
 
         when:
-        def result = lib()
+        def pl = new ImporterPlugin()
+        if (!(pl instanceof Plugin)) throw new IllegalStateException()
+        if (pl == null) throw new NullPointerException()
 
         then:
-        result == true
+        noExceptionThrown()
     }
+
 }

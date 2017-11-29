@@ -9,7 +9,7 @@ class ImporterPlugin implements Plugin<Project> {
        def extension = project.extensions.create('msimporter', ImporterPluginExtension, project)
         project.task('hello') {
             doLast {
-                println 'Hello from the Importer'
+                println 'Hello from the Importers'
             }
         }
     }
